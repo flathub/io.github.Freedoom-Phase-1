@@ -48,8 +48,11 @@
 				},
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/freedoom/freedoom/9c6c68127672feee501d5e5cab9d5e15c3dbf8b3/sprites/playa2a8.png",
-					"sha256": "2814d1bc85b0994dc39926b26fb4c30b25556709255958500289c6d758ca8ce1"
+					"path": "playa2a8-64x64.png"
+				},
+				{
+					"type": "file",
+					"path": "playa2a8-128x128.png"
 				}
 			],
 			"build-commands": [
@@ -57,8 +60,8 @@
 				"sed -i 's/Exec=freedoom1/Exec=gzdoom/g' freedoom1.desktop",
 				"install -Dm 644 freedoom1.desktop -t /app/share/applications",
 				"install -Dm 644 freedoom1.appdata.xml -t /app/share/appdata",
-				"mv playa2a8.png freedoom1.png",
-				"install -Dm 644 freedoom1.png -t /app/share/icons/hicolor/64x64/apps"
+				"mv playa2a8-64x64.png freedoom1.png && install -Dm 644 freedoom1.png -t /app/share/icons/hicolor/64x64/apps/",
+				"mv playa2a8-128x128.png freedoom1.png && install -Dm 644 freedoom1.png -t /app/share/icons/hicolor/128x128/apps/"
 			]
 		}
 	]
