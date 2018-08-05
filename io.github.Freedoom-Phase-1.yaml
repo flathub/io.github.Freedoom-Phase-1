@@ -1,7 +1,7 @@
 app-id: io.github.Freedoom-Phase-1
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: '1.6'
+runtime-version: 1.6
 command: gzdoom.sh
 rename-desktop-file: freedoom1.desktop
 rename-appdata-file: freedoom1.appdata.xml
@@ -23,7 +23,7 @@ modules:
 - name: fluidsynth
   buildsystem: cmake-ninja
   config-opts:
-  - -DCMAKE_BUILD_TYPE=Release
+  - -DCMAKE_BUILD_TYPE=RelWithDebInfo
   - -DLIB_SUFFIX=
   sources:
   - type: archive
