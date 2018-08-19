@@ -75,6 +75,7 @@ modules:
   - desktop-file-edit --set-key=Exec --set-value=gzdoom.sh freedoom1.desktop
   - install -Dm 644 freedoom1.desktop -t /app/share/applications
   - install -Dm 644 freedoom1.appdata.xml -t /app/share/appdata
+  - sed -e 's|</description>|<p>This package uses the GZDoom source port.</p></description>|' -i /app/share/appdata/freedoom1.appdata.xml
   - install -Dm 644 playa2a8-48x48.png /app/share/icons/hicolor/48x48/apps/freedoom1.png
   - install -Dm 644 playa2a8-64x64.png /app/share/icons/hicolor/64x64/apps/freedoom1.png
   - install -Dm 644 playa2a8-128x128.png /app/share/icons/hicolor/128x128/apps/freedoom1.png
