@@ -1,7 +1,7 @@
 app-id: io.github.Freedoom-Phase-1
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: "18.08"
+runtime-version: "19.08"
 command: gzdoom.sh
 rename-desktop-file: freedoom1.desktop
 rename-appdata-file: freedoom1.appdata.xml
