@@ -3,8 +3,8 @@ runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
 runtime-version: "18.08"
 command: gzdoom.sh
-rename-desktop-file: freedoom1.desktop
-rename-appdata-file: freedoom1.appdata.xml
+rename-desktop-file: io.github.freedoom.Phase1.desktop
+rename-appdata-file: io.github.freedoom.Phase1.metainfo.xml
 rename-icon: freedoom1
 finish-args:
 - --device=dri
@@ -78,14 +78,14 @@ modules:
   buildsystem: simple
   sources:
   - type: archive
-    url: https://github.com/freedoom/freedoom/releases/download/v0.11.3/freedoom-0.11.3.zip
-    sha256: 28a5eafbb1285b78937bd408fcdd8f25f915432340eee79da692eae83bce5e8a
+    url: https://github.com/freedoom/freedoom/releases/download/v0.12.0/freedoom-0.12.0.zip
+    sha256: 5722aa8c157ca49e445a30dd22837d53c32754956715ef6febf385489a816fde
   - type: file
-    url: https://raw.githubusercontent.com/freedoom/freedoom/v0.11.3/dist/freedoom1.desktop
-    sha256: e3f79848f4517fe02dca17ebb767bdfa53b600832c347bd62d6a30ed9a7c35a4
+    url: https://raw.githubusercontent.com/freedoom/freedoom/v0.12.0/dist/io.github.freedoom.Phase1.desktop
+    sha256: 8dacfbc18bf8e1c61d23de57c2690928066cc500714b0943b9d0880db0084990
   - type: file
-    url: https://raw.githubusercontent.com/freedoom/freedoom/v0.11.3/dist/freedoom1.appdata.xml
-    sha256: bdb0e08886306e5777eddb21fd93ae99125e57152f8b6a7f83f4e6e1cece1f58
+    url: https://raw.githubusercontent.com/freedoom/freedoom/v0.12.0/dist/io.github.freedoom.Phase1.metainfo.xml
+    sha256: defd3e4f713d4c42002d55770fd936e9736008c7afbaff1be99037ea4d675018
   - type: file
     path: playa2a8-48x48.png
   - type: file
@@ -94,12 +94,12 @@ modules:
     path: playa2a8-128x128.png
   build-commands:
   - install -Dm 644 freedoom1.wad /app/share/games/doom
-  - desktop-file-edit --set-key=Exec --set-value=gzdoom.sh freedoom1.desktop
-  - install -Dm 644 freedoom1.desktop -t /app/share/applications
-  - install -Dm 644 freedoom1.appdata.xml -t /app/share/appdata
-  - sed -e 's|</description>|<p>This package uses the GZDoom source port.</p></description>|' -i /app/share/appdata/freedoom1.appdata.xml
-  - sed -e 's|</component>|<releases><release version="0.11.3" date="2017-07-18"></release></releases></component>|' -i /app/share/appdata/freedoom1.appdata.xml
-  - sed -e 's|</component>|<content_rating type="oars-1.1"><content_attribute id="violence-bloodshed">intense</content_attribute></content_rating></component>|' -i /app/share/appdata/freedoom1.appdata.xml
+  - 'desktop-file-edit --set-key=Name --set-value="Freedoom: Phase 1" io.github.freedoom.Phase1.desktop'
+  - desktop-file-edit --set-key=Exec --set-value=gzdoom.sh io.github.freedoom.Phase1.desktop
+  - install -Dm 644 io.github.freedoom.Phase1.desktop -t /app/share/applications
+  - install -Dm 644 io.github.freedoom.Phase1.metainfo.xml -t /app/share/appdata
+  - sed -e 's|io.github.freedoom.Phase1|io.github.Freedoom-Phase-1|' -i /app/share/appdata/io.github.freedoom.Phase1.metainfo.xml
+  - sed -e 's|</description>|<p>This package uses the GZDoom source port.</p></description>|' -i /app/share/appdata/io.github.freedoom.Phase1.metainfo.xml
   - install -Dm 644 playa2a8-48x48.png /app/share/icons/hicolor/48x48/apps/freedoom1.png
   - install -Dm 644 playa2a8-64x64.png /app/share/icons/hicolor/64x64/apps/freedoom1.png
   - install -Dm 644 playa2a8-128x128.png /app/share/icons/hicolor/128x128/apps/freedoom1.png
